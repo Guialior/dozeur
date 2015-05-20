@@ -1,5 +1,6 @@
 <html>
 <script src="jquery-1.11.2.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -8,10 +9,10 @@ $(document).ready(function(){
 
 if( $('input[name=celer]').is(':checked') ){
 	$.celer = 1;
-    alert("jQuery c'est super");
+    alert("jQuery ok");
 } else {
 	$.celer = 0;
-    alert("jQuery c'est autre chose");
+    alert("jQuery ok 0");
 }
 
         $.post("dozer.php",
