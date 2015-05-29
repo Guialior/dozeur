@@ -162,11 +162,15 @@ select {
 $(document).ready(function(){
   /* ADD AND DELETE */
 	$(".plus").click(function() {
-    $("#avantage").append('<select name="" placeholder="Capacités bonus" id=""><option name="celer" id="celer" value="">Célérité</option><option name="vol" value="">Vol</option><option name="init" value="">Initiative</option><option name="contactm" value="">Contact Mortel</option><option name="piet" value="">Pietinement</option></select><div class="remove"></div>');
+    $("#avantage").append('<select name="" placeholder="Capacités bonus" id=""><option name="celer" id="celer" value="">Célérité</option><option name="vol" value="">Vol</option><option name="init" value="">Initiative</option><option name="contactm" value="">Contact Mortel</option><option name="piet" value="">Pietinement</option></select><div class="remove"></div>').fadeIn();
 	});
   $("#avantage").on( "click", "div", function(){
-    $(this).closest("div").remove();
-    $(this).find("select").css("display", "none");
+    $(this).closest("div").fadeOut("normal", function() {
+        $(this).remove();
+      });
+    $(this).prev().fadeOut("normal", function() {
+        $(this).remove();
+      });
   });
   // $("#avantage").on( "click", "select", function(){
   //   $(this).closest("select").css("display", "none");
